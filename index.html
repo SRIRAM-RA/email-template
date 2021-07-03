@@ -46,6 +46,42 @@
             font-weight: 520;
         }
 
+        .contact {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .facebook-1 {
+            width: 40px;
+            height: 40px;
+            flex-grow: 0;
+            margin: 0 18px 9px 49px;
+        }
+
+        .facebook-2 {
+            width: 40px;
+            height: 40px;
+            flex-grow: 0;
+            margin: 0 18px 9px;
+        }
+
+        .facebook-3 {
+            width: 40px;
+            height: 40px;
+            flex-grow: 0;
+            margin: 0 62px 9px 18px;
+        }
+
+        .Combined-Shape2x-1 {
+            width: 50%;
+        }
+
+        .heart {
+            vertical-align: middle;
+        }
+
         @media screen and (max-width: 500px) {
             .rectangle {
                 width: 93% !important;
@@ -53,6 +89,10 @@
                 padding: 12px;
                 text-align: justify;
                 text-justify: inter-word;
+            }
+
+            .with-reg {
+                margin-left: 20px;
             }
         }
 
@@ -69,7 +109,8 @@
 <body>
     <div class="rectangle">
         <div class="head-container">
-            <h1 style="font-weight: 620;">Spotknack</h1>
+            <!-- <h1 style="font-weight: 620;">Spotknack</h1> -->
+            <img class="Combined-Shape2x-1" src="https://spotknack.com/mailimages/spotknacklogo.png">
         </div>
         <div class="content-container">
             <p>Hi Harsha,</p>
@@ -115,6 +156,14 @@
                     Founder- Spotknack</subtext>
             </p>
         </div>
+        <div class="contact">
+            <img class="facebook-1" src="https://spotknack.com/mailimages/mailfacebook.png">&nbsp;
+            <img class="facebook-2" src="https://spotknack.com/mailimages/maillinkedin.png">&nbsp;
+            <img class="facebook-3" src="https://spotknack.com/mailimages/mailtwitter.png">&nbsp;
+        </div>
+        <p class="with-reg">With <img class="heart" src="https://spotknack.com/mailimages/mailheart.png"> from Spotknack
+            HQ(Coimbatore)
+        </p>
     </div>
 </body>
 
