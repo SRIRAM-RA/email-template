@@ -1,170 +1,960 @@
 <html>
 
 <head>
-    <title> Email Template</title>
+    <title> Story Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@200;400&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
+            scroll-behavior: smooth;
         }
 
-        .rectangle {
-            width: 45%;
-            background-color: white;
-            margin-left: 25%;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .head-container {
+        .topnav {
             width: 100%;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
+            overflow: none;
+            position: fixed;
+            display: flex;
+            background-color: #ffffff;
+            flex-direction: row;
+            justify-content: space-between;
+            vertical-align: middle;
         }
 
-        .content-container {
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            line-height: 1.71;
+        .topnav a {
+            display: block;
+            padding: 18px;
+            float: right;
+            font-size: 18px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
             letter-spacing: 0.6px;
             text-align: left;
             color: #000000;
+            text-align: center;
         }
 
-        .content-container a {
-            color: rgb(0, 162, 255);
-            text-decoration: none;
+        .topnav .icon {
+            display: none;
         }
 
-        subtext {
-            font-weight: 520;
+        .btn {
+            height: 35px;
+            /* padding: 6px; */
+            text-align: center;
+            border-radius: 5px;
+            border: solid 1px #74d30b;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.6px;
+            text-align: left;
+            color: #74d30b;
+            background-color: transparent;
         }
 
-        .contact {
+        .btn:hover {
+            background-color: #74d30b;
+            color: white;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 70%;
+        }
+
+        .col-25 {
+            width: 30%;
+            height: 20%;
+            margin-top: 5%;
+            margin-left: 5%;
             display: flex;
-            width: 100%;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #name {
+            margin-top: -15px;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        #role {
+            margin-top: -25px;
+            font-size: 30px;
+        }
+
+        #profile {
+            margin-top: -30px;
+        }
+
+        .content-container {
+            display: flex;
+            padding: 50px;
             flex-direction: row;
-            justify-content: center;
+            vertical-align: middle;
+            /* justify-content: space-between; */
         }
 
-        .facebook-1 {
-            width: 40px;
-            height: 40px;
-            flex-grow: 0;
-            margin: 0 18px 9px 49px;
+        .footer {
+            position: relative;
+            padding-top: 40px;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            bottom: 0;
+            color: white;
+            justify-content: space-evenly;
         }
 
-        .facebook-2 {
-            width: 40px;
-            height: 40px;
-            flex-grow: 0;
-            margin: 0 18px 9px;
+        .footer-col-1 {
+            /* width: 35%; */
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            text-align: left;
+            color: #ffffff;
         }
 
-        .facebook-3 {
-            width: 40px;
-            height: 40px;
-            flex-grow: 0;
-            margin: 0 62px 9px 18px;
+        .footer-logo {
+            width: 30%;
+            filter: invert(100%);
         }
 
-        .Combined-Shape2x-1 {
-            width: 50%;
+        .content-1 {
+            font-weight: 200;
+            font-size: 15px;
+            line-height: 2.5px;
+            letter-spacing: 0.6px;
+        }
+
+        .footer-col-1 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-col-1 a:hover {
+            color: red;
+        }
+
+        .content-1-1 {
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+            justify-content: space-between;
+            font-size: 30px;
+        }
+
+        .contact-logo {
+            width: 30%;
+        }
+
+        .contact-logo-1 {
+            width: 100%;
+            filter: invert(100%);
+        }
+
+        .row-1 {
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .content-2-1 {
+            line-height: 7px;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 20px;
+        }
+
+        .content-2-1 a {
+            color: white;
+            text-decoration: none;
+            font-weight: 100;
+            letter-spacing: 0.6px;
+        }
+
+        .content-2-1 a:hover {
+            color: red;
+        }
+
+        .footer-col-2 {
+            margin-left: -3%;
+        }
+
+        .footer-col-3 {
+            margin-left: 12%;
+        }
+
+        .row-2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.6px;
+            font-weight: 400;
+            padding: 5px;
+            border-top: 1px solid white;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .content-3-1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-right: 6%;
+            width: 40%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .content-3-1 a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .content-3-1 a:hover {
+            color: red;
         }
 
         .heart {
             vertical-align: middle;
         }
 
+        .Ellipse-136 {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-top: 16.5%;
+            border: solid 2px #c9fd6a;
+            /* vertical-align: middle; */
+        }
+
+        .Ellipse-137 {
+            width: 20px;
+            height: 20px;
+            /* margin: 0.7px 104.9px 24.3px 230px; */
+            margin-top: 17%;
+            border: solid 2px #c9fd6a;
+            border-radius: 50%;
+        }
+
+        .Ellipse-138 {
+            width: 20px;
+            height: 20px;
+            /* margin: 0.7px 104.9px 24.3px 230px; */
+            margin-top: 15%;
+            border: solid 2px #c9fd6a;
+            border-radius: 50%;
+        }
+
+        .Line-54 {
+            width: 1px;
+            height: 62px;
+            margin: -20.7px 153px 0 242px;
+            float: right;
+            transform: rotate(180deg);
+            background-color: #c9fd6a;
+        }
+
+        .Line-55 {
+            width: 1px;
+            height: 62px;
+            margin: 309.7px 114px 0 317px;
+            transform: rotate(180deg);
+            background-color: #c9fd6a;
+        }
+
+        .dp-container {
+            width: 33%;
+            padding: 40px;
+        }
+
+        .dp {
+            width: 100%;
+            padding: 20px;
+            padding-top: 5px;
+            /* background-color: thistle; */
+        }
+
+        #dp {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .btns {
+            width: 31%;
+            position: fixed;
+            margin-left: 65%;
+        }
+
+        #go-to-home-btn {
+            float: right;
+            margin-top: 40%;
+            margin-right: 30%;
+            width: 19%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #go-to-about-btn {
+            float: right;
+            margin-top: -3.5%;
+            margin-right: 30%;
+            width: 19%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #go-to-footer-btn {
+            float: right;
+            margin-top: -3.8%;
+            margin-right: 30%;
+            width: 23%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btns a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-around; */
+            padding: 50px;
+        }
+
+        .image-box {
+            width: 33%;
+            padding: 30px;
+            /* background-color: #c9fd6a; */
+            float: left;
+        }
+
+        .about-content {
+            width: 33%;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #about-dp {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-head {
+            font-size: 25px;
+            font-weight: bolder;
+            font-family: 'Playfair Display';
+        }
+
+        .story-content {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.51;
+            letter-spacing: 0.6px;
+            text-align: left;
+            color: #000000;
+        }
+
+        .active {
+            font-weight: bolder;
+        }
+
         @media screen and (max-width: 500px) {
-            .rectangle {
-                width: 93% !important;
-                margin-left: 0% !important;
-                padding: 12px;
-                text-align: justify;
-                text-justify: inter-word;
+            .topnav a:not(:last-child) {
+                display: none;
             }
 
-            .with-reg {
-                margin-left: 20px;
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+
+            .topnav {
+                position: fixed;
+                /* flex-direction: column; */
+                transition: 2s;
+            }
+
+            .responsive {
+                position: fixed;
+                flex-direction: column;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: center;
+                /* transition: 20s; */
+            }
+
+            .content-container {
+                width: 100%;
+                flex-direction: column;
+                padding: 0px;
+            }
+
+            .btns {
+                display: none;
+            }
+
+            .col-1 {
+                width: 60%;
+            }
+
+            .logo {
+                width: 100%;
+            }
+
+            .col-25 {
+                width: 100%;
+                margin-left: 0%;
+                padding-top: 18px;
+                text-align: center;
+            }
+
+            .dp-container {
+                width: 100%;
+                padding: 0px;
+            }
+
+            .dp {
+                padding: 0px;
+            }
+
+            #dp {
+                width: 340px;
+                height: 340px;
+                padding: 10px;
+            }
+
+            .about-container {
+                width: 100%;
+                padding: 0px;
+                flex-direction: column;
+            }
+
+            .image-box {
+                display: none;
+            }
+
+            .about-content {
+                width: 100%;
+                padding-left: 0px;
+            }
+
+            .footer {
+                width: 100%;
+                position: inherit;
+            }
+
+            .row-1 {
+                width: 95%;
+                padding-left: 10px;
+                flex-direction: column;
+                padding-right: 0px;
+            }
+
+            .footer-col-2 {
+                margin-left: 0%;
+            }
+
+            .footer-col-3 {
+                margin-left: 0%;
+            }
+
+            .row-2 {
+                flex-direction: column;
+            }
+
+            #cp-rights {
+                margin-left: 0% !important;
+            }
+
+            .content-3-1 {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .story-content {
+                font-size: 14px;
+                padding: 7px;
+            }
+
+            .content-1-1 {
+                width: 60%;
+            }
+
+            #name {
+                word-wrap: break-word;
             }
         }
 
-        @media screen and (min-width: 501px) and (max-width: 1100px) {
-            .rectangle {
-                width: 93% !important;
-                margin-left: 0% !important;
-                padding: 25px;
+        @media screen and (min-width:501px) and (max-width: 1000px) {
+            .content-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .col-25 {
+                width: 100%;
+                text-align: center;
+                margin-left: 0%;
+            }
+
+            .dp-container {
+                width: 100%;
+                padding: 0px;
+                padding-top: 10px;
+            }
+
+            .dp {
+                padding: 0px;
+            }
+
+            .btns {
+                display: none;
+            }
+
+            .image-box {
+                display: none;
+            }
+
+            .about-container {
+                padding-top: 0px;
+            }
+
+            .about-content {
+                width: 100%;
+            }
+
+            .footer {
+                position: inherit;
+            }
+
+            .row-1 {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+
+            .footer-col-2 {
+                width: 35%;
+            }
+
+            .footer-col-3 {
+                width: 30%;
+                margin-left: 0%;
+            }
+
+            .content-1-1 {
+                width: 60%;
+            }
+
+            #cp-rights {
+                margin-left: 2%;
+            }
+
+            .content-3-1 {
+                width: 60%;
+            }
+
+            .content-3-1 a {
+                padding-top: 15px;
+                font-size: 16px;
+                vertical-align: middle;
+            }
+
+            .col-1 {
+                width: 30%;
+            }
+
+            .logo {
+                width: 100%;
+            }
+
+            .col-2 {
+                width: 70%;
+            }
+
+            .topnav a {
+                font-size: 16px;
+                padding: 9px;
+            }
+
+            .btn {
+                font-size: 14.5px;
+                height: 30px;
+            }
+        }
+
+        @media screen and (min-width: 1001px) and (max-width: 1100px) {
+            .content-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .col-25 {
+                width: 100%;
+                text-align: center;
+                margin-left: 0%;
+            }
+
+            .dp-container {
+                width: 100%;
+                padding: 0px;
+                padding-top: 10px;
+            }
+
+            .dp {
+                padding: 0px;
+            }
+
+            .btns {
+                display: none;
+            }
+
+            .image-box {
+                display: none;
+            }
+
+            .about-container {
+                padding-top: 0px;
+            }
+
+            .about-content {
+                width: 100%;
+            }
+
+            .footer {
+                position: inherit;
+            }
+
+            .row-1 {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+
+            .footer-col-2 {
+                width: 35%;
+            }
+
+            .footer-col-3 {
+                width: 30%;
+                margin-left: 0%;
+            }
+
+            .content-1-1 {
+                width: 60%;
+            }
+
+            #cp-rights {
+                margin-left: 2%;
+            }
+
+            .content-3-1 {
+                width: 60%;
+            }
+
+            .content-3-1 a {
+                padding-top: 15px;
+                font-size: 16px;
+                vertical-align: middle;
+            }
+
+            .col-1 {
+                width: 30%;
+            }
+
+            .logo {
+                width: 100%;
+            }
+
+            .col-2 {
+                width: 70%;
+            }
+
+            .topnav a {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .btn {
+                font-size: 17px;
+                height: 30px;
+            }
+        }
+
+        @media screen and (min-width:1101px) and (max-width: 1250px) {
+            .footer-col-2 {
+                width: 40%;
+                margin-left: 5%;
+            }
+
+            .footer-col-3 {
+                width: 40%;
+                margin-left: 5%;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="rectangle">
-        <div class="head-container">
-            <!-- <h1 style="font-weight: 620;">Spotknack</h1> -->
-            <img class="Combined-Shape2x-1" src="https://spotknack.com/mailimages/spotknacklogo.png">
+    <div class="topnav" id="myTopnav">
+        <div class="col-1">
+            <a href=#><img src="https://spotknack.com/mailimages/spotknacklogo.png" class="logo">
+            </a>
         </div>
-        <div class="content-container">
-            <p>Hi Harsha,</p>
-            <p>
-                &emsp;&emsp;&emsp;&emsp;&nbsp;Welcome to Spotknack Family! Thank you for trusting us and joining our
-                program.
-                Its our
-                responsibility
-                to mentor,guide and extend our helping our hand to help you, what you are passionate about. You have now
-                stepped out of the crowd and its time to now farword. Lets walk together.</p>
-            <p>&emsp;&emsp;&emsp;&emsp;&nbsp;Please find the credentials of the platform, we developed to help our
-                mentees to learn and stay
-                connected with us forever.</p>
-
-            <p class="thicker"><b>Username : harsha@spotknack.com</b><br>
-                <b>Password : 1234567 (This is a system generated password).</b><br>
-                <b>Login URL : <a href=#>https://mentee.spotknack.com/login</a></b>
-            </p>
-
-            <p><b>Note :</b> You can also change the password by visiting security page after logging in</p>
-
-            <p>To get started with, the following steps will help you to complete the primary need of the platform.<br>
-            </p>
-
-            <p><b>Step 1: Profile Details</b><br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Fill your general,academic and spotknack program
-                details. Your batch
-                name is : <b>02FRONT21</b></p>
-
-            <p><b>Step 2 : View your mentors plan</b><br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;You can view the entire program plans that your
-                mentors have planned for you,along with resource
-                materials to learn.<br></p>
-
-            <p style="text-align: center ;"><b>Happy Learning!</b><br></p>
-
-            <p>If you have any other concerns and would like to reach out to me , feel free to ping to
-                <a href=#>foundersdesk@spotknack.com</a> and coffee is on me.
-            </p>
-
-            <p><b>Regards ;</b><br>
-                <subtext>Harsha<br>
-                    Founder- Spotknack</subtext>
-            </p>
+        <div class="col-2">
+            <a href=#><button href=# class="btn"> Employers</button></a>
+            <a href=#><button href=# class="btn"> Students</button></a>
+            <a href=#> How it works</a>
+            <a href=#> About Us</a>
+            <a href=#> Home</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
-        <div class="contact">
-            <img class="facebook-1" src="https://spotknack.com/mailimages/mailfacebook.png">&nbsp;
-            <img class="facebook-2" src="https://spotknack.com/mailimages/maillinkedin.png">&nbsp;
-            <img class="facebook-3" src="https://spotknack.com/mailimages/mailtwitter.png">&nbsp;
-        </div>
-        <p class="with-reg">With <img class="heart" src="https://spotknack.com/mailimages/mailheart.png"> from Spotknack
-            HQ(Coimbatore)
-        </p>
     </div>
+    <div class="content-container" id="Home">
+        <div class="col-25">
+            <h3 style="font-size: 30px; color: #000000;">Hi there , i am </h3>
+            <h1 id="name"> Harsha Varthan</h1>
+            <h4 id="role"> Front End Developer</h4>
+            <a href=# id="profile"><img src="https://spotknack.com/mailimages/maillinkedin.png"></a>
+        </div>
+        <div class="dp-container">
+            <div class="dp">
+                <img src="dp.jpg" id="dp">
+            </div>
+        </div>
+        <div class="btns" id="go-to-btns">
+            <a href="#Home" id="go-to-home-btn" class="button active">
+                <p>Home </p>
+                <div class="Ellipse-136"></div>
+            </a>
+            <div class="Line-54"></div>
+            <a href="#About-me" id="go-to-about-btn" class="button">
+                <p>About</p>
+                <div class="Ellipse-137"></div>
+            </a>
+            <div class="Line-55"></div>
+
+            <a href="#Footer" id="go-to-footer-btn" class="button">
+                <p>Contact</p>
+                <div class="Ellipse-138"></div>
+            </a>
+
+        </div>
+    </div>
+    <div class="about-container" id="About-me">
+        <div class="image-box">
+            <img src="dp.jpg" id="about-dp">
+        </div>
+        <div class="about-content">
+            <div class="story-head">
+                <h1>My Story</h1>
+            </div>
+            <div class="story-content">
+                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                    cupidatat
+                    irure. Laborum magna nulla duis ullamco cillum dolor.
+                </p>
+                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                    cupidatat
+                    irure. Laborum magna nulla duis ullamco cillum dolor.
+                </p>
+                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                    cupidatat
+                    irure. Laborum magna nulla duis ullamco cillum dolor.
+                </p>
+                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                    cupidatat
+                    irure. Laborum magna nulla duis ullamco cillum dolor.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="Footer">
+        <div class="row-1">
+            <div class="footer-col-1">
+                <img src="https://spotknack.com/mailimages/spotknacklogo.png" class="footer-logo">
+                <div class="content-1">
+                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Address</h4>
+                    <h5 style="font-weight: 400;">Coimbatore-641 035</h5><br>
+                </div>
+                <div class="content-1">
+                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Support</h4>
+                    <a href=#>
+                        <h5 style="font-weight: 400;">support@spotknack.com</h5><br>
+                    </a>
+                </div>
+                <div class="content-1">
+                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Follow Us On</h4>
+                    <div class="content-1-1">
+                        <a href=#><i class="fab fa-facebook"></i></a>
+                        <a href=#><i class="fab fa-linkedin"></i></a>
+                        <a href=#><i class="fab fa-instagram"></i></a>
+                        <a href=#><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <div class="content-2-1">
+                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Organization</h4>
+                    <a href=#>
+                        <h5 style="font-weight: 400;">About</h5>
+                    </a>
+                    <a href=#>
+                        <h5 style="font-weight: 400;">Time Line</h5>
+                    </a>
+                    <a href=#>
+                        <h5 style="font-weight: 400;">Members </h5>
+                    </a>
+                    <a href=#>
+                        <h5 style="font-weight: 400;">Become a member</h5>
+                    </a><br>
+                </div>
+            </div>
+            <div class="footer-col-3">
+                <div class="content-2-1">
+                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Resources</h4>
+                    <a href=#>
+                        <h5 style="font-weight: 400;">Impact Stories</h5>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col-3">
+                <div class="content-2-1">
+                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Partners</h4>
+                    <a href=#>
+                        <h5 style="font-weight: 400;">Startup Culture</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row-2">
+            <h5 style="margin-left: 6%;" id="cp-rights">Build With <img class="heart"
+                    src="https://spotknack.com/mailimages/mailheart.png"> By Spotknack Talent
+                Community</h5>
+            <div class="content-3-1">
+                <a href=#>
+                    <h5 style="font-weight: 400;">Privacy Policy</h5>
+                </a>
+                <a href=#>
+                    <h5 style="font-weight: 400;">Terms and Conditions</h5>
+                </a>
+                <a href=#>
+                    <h5 style="font-weight: 400;">Code of Conduct</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var header = document.getElementById("go-to-btns");
+        var btns = header.getElementsByClassName("button");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+    <script>
+        $(window).scroll(function () {
+            if (($(document).height() - $(window).scrollTop()) <= 1000) {
+                $(".btns").css({
+                    position: 'fixed',
+                    top: 'auto',
+                    bottom: '430px'
+                });
+            } else if ($(window).scrollTop() >= 30) {
+                $(".btns").css({
+                    position: 'fixed',
+                    top: '30px',
+                    bottom: 'auto'
+                });
+            } else {
+                $(".btns").css({
+                    position: 'absolute',
+                    top: '30px',
+                    bottom: 'auto'
+                });
+            }
+        });
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
 
 </html>
