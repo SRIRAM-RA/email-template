@@ -90,8 +90,8 @@
         }
 
         .col-25 {
-            width: 30%;
-            height: 20%;
+            width: 44%;
+            /* height: 20%; */
             margin-top: 5%;
             margin-left: 5%;
             display: flex;
@@ -252,52 +252,13 @@
             vertical-align: middle;
         }
 
-        .Ellipse-136 {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-top: 16.5%;
-            border: solid 2px #c9fd6a;
-            /* vertical-align: middle; */
-        }
 
-        .Ellipse-137 {
-            width: 20px;
-            height: 20px;
-            /* margin: 0.7px 104.9px 24.3px 230px; */
-            margin-top: 17%;
-            border: solid 2px #c9fd6a;
-            border-radius: 50%;
-        }
-
-        .Ellipse-138 {
-            width: 20px;
-            height: 20px;
-            /* margin: 0.7px 104.9px 24.3px 230px; */
-            margin-top: 15%;
-            border: solid 2px #c9fd6a;
-            border-radius: 50%;
-        }
-
-        .Line-54 {
-            width: 1px;
-            height: 62px;
-            margin: -20.7px 153px 0 242px;
+        .box {
             float: right;
-            transform: rotate(180deg);
-            background-color: #c9fd6a;
-        }
-
-        .Line-55 {
-            width: 1px;
-            height: 62px;
-            margin: 309.7px 114px 0 317px;
-            transform: rotate(180deg);
-            background-color: #c9fd6a;
         }
 
         .dp-container {
-            width: 33%;
+            /* width: 33%; */
             padding: 40px;
         }
 
@@ -315,69 +276,23 @@
             object-fit: cover;
         }
 
-        .btns {
-            width: 31%;
-            position: fixed;
-            margin-left: 65%;
-        }
-
-        #go-to-home-btn {
-            float: right;
-            margin-top: 40%;
-            margin-right: 30%;
-            width: 19%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #go-to-about-btn {
-            float: right;
-            margin-top: -3.5%;
-            margin-right: 30%;
-            width: 19%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #go-to-footer-btn {
-            float: right;
-            margin-top: -3.8%;
-            margin-right: 30%;
-            width: 23%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btns a {
-            color: #000000;
-            text-decoration: none;
-        }
 
         .about-container {
-            display: flex;
-            flex-direction: row;
+            display: none;
+            /* flex-direction: row; */
             /* justify-content: space-around; */
             padding: 50px;
         }
 
         .image-box {
-            width: 33%;
+            width: 43%;
             padding: 30px;
             /* background-color: #c9fd6a; */
             float: left;
         }
 
         .about-content {
-            width: 33%;
+            width: 47%;
             padding-left: 30px;
             display: flex;
             flex-direction: column;
@@ -409,6 +324,19 @@
 
         .active {
             font-weight: bolder;
+        }
+
+
+        /* columns */
+        .contents {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .paper {
+            display: flex;
+            flex-direction: row;
         }
 
         @media screen and (max-width: 500px) {
@@ -451,7 +379,7 @@
                 padding: 0px;
             }
 
-            .btns {
+            .btncontainer {
                 display: none;
             }
 
@@ -486,9 +414,18 @@
             }
 
             .about-container {
+                display: flex;
                 width: 100%;
                 padding: 0px;
                 flex-direction: column;
+            }
+
+            .paper {
+                width: 100%;
+            }
+
+            .contents {
+                width: 100%;
             }
 
             .image-box {
@@ -547,10 +484,18 @@
             }
         }
 
-        @media screen and (min-width:501px) and (max-width: 1000px) {
+        @media screen and (min-width:501px) and (max-width: 1100px) {
             .content-container {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .paper {
+                width: 100%;
+            }
+
+            .contents {
+                width: 100%;
             }
 
             .col-25 {
@@ -569,7 +514,7 @@
                 padding: 0px;
             }
 
-            .btns {
+            .btncontainer {
                 display: none;
             }
 
@@ -578,6 +523,7 @@
             }
 
             .about-container {
+                display: flex;
                 padding-top: 0px;
             }
 
@@ -644,113 +590,135 @@
             }
         }
 
-        @media screen and (min-width: 1001px) and (max-width: 1100px) {
-            .content-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .col-25 {
-                width: 100%;
-                text-align: center;
-                margin-left: 0%;
-            }
-
-            .dp-container {
-                width: 100%;
-                padding: 0px;
-                padding-top: 10px;
-            }
-
-            .dp {
-                padding: 0px;
-            }
-
-            .btns {
-                display: none;
-            }
-
-            .image-box {
-                display: none;
-            }
-
-            .about-container {
-                padding-top: 0px;
-            }
-
-            .about-content {
-                width: 100%;
-            }
-
-            .footer {
-                position: inherit;
-            }
-
-            .row-1 {
-                padding-left: 50px;
-                padding-right: 50px;
-            }
-
-            .footer-col-2 {
-                width: 35%;
-            }
-
-            .footer-col-3 {
-                width: 30%;
-                margin-left: 0%;
-            }
-
-            .content-1-1 {
-                width: 60%;
-            }
-
-            #cp-rights {
-                margin-left: 2%;
-            }
-
-            .content-3-1 {
-                width: 60%;
-            }
-
-            .content-3-1 a {
-                padding-top: 15px;
-                font-size: 16px;
-                vertical-align: middle;
-            }
-
-            .col-1 {
-                width: 30%;
-            }
-
-            .logo {
-                width: 100%;
-            }
-
-            .col-2 {
-                width: 70%;
-            }
-
-            .topnav a {
-                font-size: 18px;
-                padding: 15px;
-            }
-
-            .btn {
-                font-size: 17px;
-                height: 30px;
-            }
-        }
-
         @media screen and (min-width:1101px) and (max-width: 1250px) {
             .footer-col-2 {
                 width: 40%;
                 margin-left: 5%;
             }
 
+            .contents {
+                width: 80%;
+            }
+
+            .btncontainer {
+                width: 25% !important;
+                padding-right: 50px !important;
+            }
+
             .footer-col-3 {
                 width: 40%;
                 margin-left: 5%;
             }
+        }
+
+
+        /* buttons */
+        .btncontainer {
+            width: 30%;
+            padding: 50px 0px;
+            padding-right: 100px;
+            padding-top: 100px;
+            /* background-color: black; */
+            /* justify-items: right; */
+        }
+
+        .btncontainer a {
+            color: black;
+            /* justify-items: right; */
+        }
+
+        .Ellipse-136 {
+            width: 20px;
+            height: 20px;
+            margin-top: 20%;
+            border-radius: 50%;
+            /* margin: 292px 104.9px 59.4px 6px; */
+            border: solid 2px #c9fd6a;
+        }
+
+        .Line-55 {
+            width: 1px;
+            height: 62px;
+            margin-left: 82%;
+            margin-top: -12%;
+            /* margin: 309.7px 114px 0 317px; */
+            transform: rotate(180deg);
+            background-color: #c9fd6a;
+        }
+
+        .Ellipse-137 {
+            width: 20px;
+            height: 20px;
+            margin-top: 20%;
+            border-radius: 50%;
+            /* margin: 59.7px 104.9px 53px 6px; */
+            border: solid 2px #c9fd6a;
+        }
+
+        .Line-54 {
+            width: 1px;
+            height: 62px;
+            margin-top: -13%;
+            margin-left: 82%;
+            transform: rotate(180deg);
+            background-color: #c9fd6a;
+        }
+
+        .Ellipse-138 {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-top: 15%;
+            margin-left: 5%;
+            /* margin: 22px 104.9px 338px 6px; */
+            border: solid 2px #c9fd6a;
+        }
+
+        .button {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box {
+            padding: 50px 100px 70px 0px;
+            float: right;
+        }
+
+        .box a {
+            text-decoration: none;
+        }
+
+        #go-to-home-btn {
+            /* float: right; */
+            margin-top: 50%;
+            /* margin-right: 30%; */
+            width: 100%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #go-to-about-btn {
+            margin-top: -20.5%;
+            width: 100%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #go-to-footer-btn {
+            margin-top: -16.5%;
+            margin-left: -7%;
+            width: 100%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
@@ -772,66 +740,71 @@
             </a>
         </div>
     </div>
-    <div class="content-container" id="Home">
-        <div class="col-25">
-            <h3 style="font-size: 30px; color: #000000;">Hi there , i am </h3>
-            <h1 id="name"> Harsha Varthan</h1>
-            <h4 id="role"> Front End Developer</h4>
-            <a href=# id="profile"><img src="https://spotknack.com/mailimages/maillinkedin.png"></a>
-        </div>
-        <div class="dp-container">
-            <div class="dp">
-                <img src="dp.jpg" id="dp">
+    <div class="paper">
+        <div class="contents">
+            <div class="content-container" id="Home">
+                <div class="col-25">
+                    <h3 style="font-size: 30px; color: #000000;">Hi there , i am </h3>
+                    <h1 id="name"> Harsha Varthan</h1>
+                    <h4 id="role"> Front End Developer</h4>
+                    <a href=# id="profile"><img src="https://spotknack.com/mailimages/maillinkedin.png"></a>
+                </div>
+                <div class="dp-container">
+                    <div class="dp">
+                        <img src="dp.jpg" id="dp">
+                    </div>
+                </div>
+            </div>
+            <div class="about-container" id="About-me">
+                <div class="image-box">
+                    <img src="dp.jpg" id="about-dp">
+                </div>
+                <div class="about-content">
+                    <div class="story-head">
+                        <h1>My Story</h1>
+                    </div>
+                    <div class="story-content">
+                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                            cupidatat
+                            irure. Laborum magna nulla duis ullamco cillum dolor.
+                        </p>
+                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                            cupidatat
+                            irure. Laborum magna nulla duis ullamco cillum dolor.
+                        </p>
+                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                            cupidatat
+                            irure. Laborum magna nulla duis ullamco cillum dolor.
+                        </p>
+                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
+                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
+                            cupidatat
+                            irure. Laborum magna nulla duis ullamco cillum dolor.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="btns" id="go-to-btns">
-            <a href="#Home" id="go-to-home-btn" class="button active">
-                <p>Home </p>
-                <div class="Ellipse-136"></div>
-            </a>
-            <div class="Line-54"></div>
-            <a href="#About-me" id="go-to-about-btn" class="button">
-                <p>About</p>
-                <div class="Ellipse-137"></div>
-            </a>
-            <div class="Line-55"></div>
+        <div class="btncontainer" id="go-to-btns">
+            <div class="box">
+                <a href="#" id="go-to-home-btn" class="button active">
+                    <p>Home &nbsp;</p>
+                    <div class="Ellipse-136"></div>
+                </a>
+                <div class="Line-54"></div>
+                <a href="#" id="go-to-about-btn" class="button">
+                    <p>About &nbsp;</p>
+                    <div class="Ellipse-137"></div>
+                </a>
+                <div class="Line-55"></div>
 
-            <a href="#Footer" id="go-to-footer-btn" class="button">
-                <p>Contact</p>
-                <div class="Ellipse-138"></div>
-            </a>
-
-        </div>
-    </div>
-    <div class="about-container" id="About-me">
-        <div class="image-box">
-            <img src="dp.jpg" id="about-dp">
-        </div>
-        <div class="about-content">
-            <div class="story-head">
-                <h1>My Story</h1>
-            </div>
-            <div class="story-content">
-                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                    cupidatat
-                    irure. Laborum magna nulla duis ullamco cillum dolor.
-                </p>
-                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                    cupidatat
-                    irure. Laborum magna nulla duis ullamco cillum dolor.
-                </p>
-                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                    cupidatat
-                    irure. Laborum magna nulla duis ullamco cillum dolor.
-                </p>
-                <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                    exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                    cupidatat
-                    irure. Laborum magna nulla duis ullamco cillum dolor.
-                </p>
+                <a href="#" id="go-to-footer-btn" class="button">
+                    <p>Contact &nbsp;</p>
+                    <div class="Ellipse-138"></div>
+                </a>
             </div>
         </div>
     </div>
@@ -923,29 +896,6 @@
         }
     </script>
     <script>
-        $(window).scroll(function () {
-            if (($(document).height() - $(window).scrollTop()) <= 1000) {
-                $(".btns").css({
-                    position: 'fixed',
-                    top: 'auto',
-                    bottom: '430px'
-                });
-            } else if ($(window).scrollTop() >= 30) {
-                $(".btns").css({
-                    position: 'fixed',
-                    top: '30px',
-                    bottom: 'auto'
-                });
-            } else {
-                $(".btns").css({
-                    position: 'absolute',
-                    top: '30px',
-                    bottom: 'auto'
-                });
-            }
-        });
-    </script>
-    <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
@@ -955,6 +905,17 @@
             }
         }
     </script>
+    <script>
+        document.getElementById("go-to-home-btn").addEventListener("click", function () {
+            document.getElementsByClassName("content-container")[0].style.display = "flex";
+            document.getElementsByClassName("about-container")[0].style.display = "none";
+        });
+        document.getElementById("go-to-about-btn").addEventListener("click", function () {
+            document.getElementsByClassName("content-container")[0].style.display = "none";
+            document.getElementsByClassName("about-container")[0].style.display = "flex";
+        })
+    </script>
+
 </body>
 
 </html>
