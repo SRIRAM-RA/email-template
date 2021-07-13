@@ -287,6 +287,7 @@
         .image-box {
             width: 43%;
             padding: 30px;
+            padding-top: 70px;
             /* background-color: #c9fd6a; */
             float: left;
         }
@@ -300,7 +301,7 @@
 
         #about-dp {
             width: 100%;
-            height: 100%;
+            height: 80%;
             object-fit: cover;
         }
 
@@ -312,7 +313,7 @@
 
         .story-content {
             font-family: 'Poppins', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: normal;
             font-stretch: normal;
             font-style: normal;
@@ -331,12 +332,123 @@
         .contents {
             width: 80%;
             display: flex;
+            padding: 50px;
             flex-direction: column;
         }
 
         .paper {
             display: flex;
             flex-direction: row;
+        }
+
+        /* buttons */
+        .btncontainer {
+            width: 25%;
+            padding: 50px 0px;
+            padding-right: 100px;
+            padding-top: 100px;
+            /* background-color: black; */
+            /* justify-items: right; */
+        }
+
+        .btncontainer a {
+            color: black;
+            /* justify-items: right; */
+        }
+
+        .Ellipse-136 {
+            width: 20px;
+            height: 20px;
+            margin-top: 20%;
+            border-radius: 50%;
+            /* margin: 292px 104.9px 59.4px 6px; */
+            border: solid 2px #c9fd6a;
+        }
+
+        .Line-55 {
+            width: 1px;
+            height: 62px;
+            margin-left: 82%;
+            margin-top: -12%;
+            /* margin: 309.7px 114px 0 317px; */
+            transform: rotate(180deg);
+            background-color: #c9fd6a;
+        }
+
+        .Ellipse-137 {
+            width: 20px;
+            height: 20px;
+            margin-top: 20%;
+            border-radius: 50%;
+            /* margin: 59.7px 104.9px 53px 6px; */
+            border: solid 2px #c9fd6a;
+        }
+
+        .Line-54 {
+            width: 1px;
+            height: 62px;
+            margin-top: -13%;
+            margin-left: 82%;
+            transform: rotate(180deg);
+            background-color: #c9fd6a;
+        }
+
+        .Ellipse-138 {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-top: 15%;
+            margin-left: 5%;
+            /* margin: 22px 104.9px 338px 6px; */
+            border: solid 2px #c9fd6a;
+        }
+
+        .button {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box {
+            padding: 50px 100px 70px 0px;
+            float: right;
+            margin-top: 30%;
+        }
+
+        .box a {
+            text-decoration: none;
+        }
+
+        #go-to-home-btn {
+            /* float: right; */
+            margin-top: 50%;
+            /* margin-right: 30%; */
+            width: 100%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #go-to-about-btn {
+            margin-top: -20.5%;
+            width: 100%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #go-to-footer-btn {
+            margin-top: -16.5%;
+            margin-left: -7%;
+            width: 100%;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-family: 'Poppins', sans-serif;
         }
 
         @media screen and (max-width: 500px) {
@@ -374,6 +486,7 @@
             }
 
             .content-container {
+                display: flex;
                 width: 100%;
                 flex-direction: column;
                 padding: 0px;
@@ -426,6 +539,7 @@
 
             .contents {
                 width: 100%;
+                padding: 0px;
             }
 
             .image-box {
@@ -486,6 +600,7 @@
 
         @media screen and (min-width:501px) and (max-width: 1100px) {
             .content-container {
+                display: flex;
                 flex-direction: column;
                 text-align: center;
             }
@@ -524,6 +639,7 @@
 
             .about-container {
                 display: flex;
+                padding: 10px;
                 padding-top: 0px;
             }
 
@@ -610,116 +726,6 @@
                 margin-left: 5%;
             }
         }
-
-
-        /* buttons */
-        .btncontainer {
-            width: 30%;
-            padding: 50px 0px;
-            padding-right: 100px;
-            padding-top: 100px;
-            /* background-color: black; */
-            /* justify-items: right; */
-        }
-
-        .btncontainer a {
-            color: black;
-            /* justify-items: right; */
-        }
-
-        .Ellipse-136 {
-            width: 20px;
-            height: 20px;
-            margin-top: 20%;
-            border-radius: 50%;
-            /* margin: 292px 104.9px 59.4px 6px; */
-            border: solid 2px #c9fd6a;
-        }
-
-        .Line-55 {
-            width: 1px;
-            height: 62px;
-            margin-left: 82%;
-            margin-top: -12%;
-            /* margin: 309.7px 114px 0 317px; */
-            transform: rotate(180deg);
-            background-color: #c9fd6a;
-        }
-
-        .Ellipse-137 {
-            width: 20px;
-            height: 20px;
-            margin-top: 20%;
-            border-radius: 50%;
-            /* margin: 59.7px 104.9px 53px 6px; */
-            border: solid 2px #c9fd6a;
-        }
-
-        .Line-54 {
-            width: 1px;
-            height: 62px;
-            margin-top: -13%;
-            margin-left: 82%;
-            transform: rotate(180deg);
-            background-color: #c9fd6a;
-        }
-
-        .Ellipse-138 {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-top: 15%;
-            margin-left: 5%;
-            /* margin: 22px 104.9px 338px 6px; */
-            border: solid 2px #c9fd6a;
-        }
-
-        .button {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .box {
-            padding: 50px 100px 70px 0px;
-            float: right;
-        }
-
-        .box a {
-            text-decoration: none;
-        }
-
-        #go-to-home-btn {
-            /* float: right; */
-            margin-top: 50%;
-            /* margin-right: 30%; */
-            width: 100%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #go-to-about-btn {
-            margin-top: -20.5%;
-            width: 100%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #go-to-footer-btn {
-            margin-top: -16.5%;
-            margin-left: -7%;
-            width: 100%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            font-family: 'Poppins', sans-serif;
-        }
     </style>
 </head>
 
@@ -779,11 +785,6 @@
                             cupidatat
                             irure. Laborum magna nulla duis ullamco cillum dolor.
                         </p>
-                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                            cupidatat
-                            irure. Laborum magna nulla duis ullamco cillum dolor.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -799,12 +800,12 @@
                     <p>About &nbsp;</p>
                     <div class="Ellipse-137"></div>
                 </a>
-                <div class="Line-55"></div>
+                <!-- <div class="Line-55"></div>
 
                 <a href="#" id="go-to-footer-btn" class="button">
                     <p>Contact &nbsp;</p>
                     <div class="Ellipse-138"></div>
-                </a>
+                </a> -->
             </div>
         </div>
     </div>
