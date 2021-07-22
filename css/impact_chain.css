@@ -1,0 +1,176 @@
+.container-1{
+    padding: 40px;
+    text-align: center;
+}
+
+.welcome-head{
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+}
+
+.welcome-content{
+    width: 453px;
+    font-family: Poppins;
+    font-size: 17px;
+    margin-left: 34%;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    color: #000000;
+}
+
+.section-container{
+    padding: 40px;
+    align-items: center;
+}
+.inner-box{
+    width: 70%;
+    margin-left: 16%;
+    border-radius: 25px;
+    padding: 40px;
+    background-color: rgb(116,211,11, 0.05);
+    display: flex;
+    flex-direction: row;
+}
+
+.section-container-head{
+    width: 30%;
+    padding: 15px;
+    padding-top: 30px;
+    font-family: Poppins;
+    color: #000000;
+}
+
+#head-name{
+    font-size: 42px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+#head-content{
+    opacity: 0.7;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+.impact-box{
+    width: 70%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.impact-box-block{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.impact-dp{
+    border-radius: 10px;
+    width: 170px;
+    height: 170px;  
+    object-fit: cover;
+}
+.impact-dp-box{
+    cursor: pointer;
+}
+.impact-user-content{
+    padding: 3px;
+    font-family: Poppins;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: left;
+    color: #000000;
+}
+#member-count{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#clg-name{
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.impact-chain-box{
+    display: none;
+    padding: 45px;
+    /* background-color: bisque; */
+    text-align: center;
+    font-size: 40px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    color: #000000;
+}
+h2{
+    font-weight: 700;
+}
+.chain-odd-box{
+    padding: 35px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-self: flex-start;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+}
+.img-block{
+    width: 25%;
+    padding: 15px;
+    border-radius: 50%;
+    /* background-color: blue; */
+    justify-content: space-evenly;
+}
+.student-profile-pic{
+    width: 190px;
+    height: 190px;
+    margin-top: 2%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* .Line-1 {
+    width: 2px;
+    height: 1px;
+    margin: 5.7px 78.6px 17.3px 188.6px;
+    transform: rotate(2deg);
+    border: solid 2px #74d30b;
+  } */
+  hr {
+    width: 10%;
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 4px solid #74d30b;
+    margin: 3em 0;
+    padding: 0;
+}
+.chain-even-box{
+    padding: 35px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* justify-content: center; */
+    align-self: flex-start;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+}

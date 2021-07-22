@@ -1,922 +1,255 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title> Story Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Spotknack Talent Community">
+    <meta name="description"
+        content="A community of like-minded, passionate, and motivated students formed by mentoring with the help of a working professional.">
+    <meta name="keywords" content="community, mentoring,spotknack ,passionate">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <!-- <meta name="language" content="English"> -->
+    <meta name="revisit-after" content="7 days">
+    <meta name="author" content="spotknack">
+    <title> Impact chain </title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/impact_chain.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="icon" type="image/ico" href="img/talent green.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@200;400&display=swap"
-        rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        * {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            margin: 0;
-            scroll-behavior: smooth;
-        }
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144587839-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-144587839-1');
+    </script>
+
+    <script>
+        function mentor() {
+            console.log("funciton called");
+            var img_id = document.getElementById("mentor")
+            fetch('https://testawsapi2.spotknack.com/api/impactmentorslist')
+                .then(function (response) {
+                    // console.log(response)
+                    return response.json()
+                })
+                .then((data) => {
+                    var classs = document.getElementsByClassName("impact-dp-box");
+                    var class_length = classs.length;
+                    console.log(classs);
+                    for (var i = 0; i < class_length; i++) {
+                        var img = document.createElement('img');
+                        img.src = data[0].pic_url;
+                        img.className = "impact-dp";
+                        console.log(classs[i])
+                        classs[i].appendChild(img);
+                    }
+                })
+        }</script>
 
-        .topnav {
-            width: 100%;
-            overflow: none;
-            position: fixed;
-            display: flex;
-            background-color: #ffffff;
-            flex-direction: row;
-            justify-content: space-between;
-            vertical-align: middle;
-        }
-
-        .topnav a {
-            display: block;
-            padding: 18px;
-            float: right;
-            font-size: 18px;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: 0.6px;
-            text-align: left;
-            color: #000000;
-            text-align: center;
-        }
-
-        .topnav .icon {
-            display: none;
-        }
-
-        .btn {
-            height: 35px;
-            /* padding: 6px; */
-            text-align: center;
-            border-radius: 5px;
-            border: solid 1px #74d30b;
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: 0.6px;
-            text-align: left;
-            color: #74d30b;
-            background-color: transparent;
-        }
-
-        .btn:hover {
-            background-color: #74d30b;
-            color: white;
-            transition: 0.5s;
-            cursor: pointer;
-        }
-
-        .logo {
-            width: 70%;
-        }
-
-        .col-25 {
-            width: 44%;
-            /* height: 20%; */
-            margin-top: 5%;
-            margin-left: 5%;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #name {
-            margin-top: -15px;
-            font-size: 60px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        #role {
-            margin-top: -25px;
-            font-size: 30px;
-        }
-
-        #profile {
-            margin-top: -30px;
-        }
-
-        .content-container {
-            display: flex;
-            padding: 50px;
-            flex-direction: row;
-            vertical-align: middle;
-            /* justify-content: space-between; */
-        }
-
-        .footer {
-            position: relative;
-            padding-top: 40px;
-            background-color: #000000;
-            display: flex;
-            flex-direction: column;
-            bottom: 0;
-            color: white;
-            justify-content: space-evenly;
-        }
-
-        .footer-col-1 {
-            /* width: 35%; */
-            font-family: 'Poppins', sans-serif;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            text-align: left;
-            color: #ffffff;
-        }
-
-        .footer-logo {
-            width: 30%;
-            filter: invert(100%);
-        }
-
-        .content-1 {
-            font-weight: 200;
-            font-size: 15px;
-            line-height: 2.5px;
-            letter-spacing: 0.6px;
-        }
-
-        .footer-col-1 a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .footer-col-1 a:hover {
-            color: red;
-        }
-
-        .content-1-1 {
-            display: flex;
-            flex-direction: row;
-            width: 30%;
-            justify-content: space-between;
-            font-size: 30px;
-        }
-
-        .contact-logo {
-            width: 30%;
-        }
-
-        .contact-logo-1 {
-            width: 100%;
-            filter: invert(100%);
-        }
-
-        .row-1 {
-            padding-left: 100px;
-            padding-right: 100px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .content-2-1 {
-            line-height: 7px;
-            font-size: 18px;
-            font-family: 'Poppins', sans-serif;
-            padding-top: 20px;
-        }
-
-        .content-2-1 a {
-            color: white;
-            text-decoration: none;
-            font-weight: 100;
-            letter-spacing: 0.6px;
-        }
-
-        .content-2-1 a:hover {
-            color: red;
-        }
-
-        .footer-col-2 {
-            margin-left: -3%;
-        }
-
-        .footer-col-3 {
-            margin-left: 12%;
-        }
-
-        .row-2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            letter-spacing: 0.6px;
-            font-weight: 400;
-            padding: 5px;
-            border-top: 1px solid white;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .content-3-1 {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            margin-right: 6%;
-            width: 40%;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .content-3-1 a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .content-3-1 a:hover {
-            color: red;
-        }
-
-        .heart {
-            vertical-align: middle;
-        }
-
-
-        .box {
-            float: right;
-        }
-
-        .dp-container {
-            /* width: 33%; */
-            padding: 40px;
-        }
-
-        .dp {
-            width: 100%;
-            padding: 20px;
-            padding-top: 5px;
-            /* background-color: thistle; */
-        }
-
-        #dp {
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-
-        .about-container {
-            display: none;
-            /* flex-direction: row; */
-            /* justify-content: space-around; */
-            padding: 50px;
-        }
-
-        .image-box {
-            width: 43%;
-            padding: 30px;
-            padding-top: 70px;
-            /* background-color: #c9fd6a; */
-            float: left;
-        }
-
-        .about-content {
-            width: 47%;
-            padding-left: 30px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #about-dp {
-            width: 100%;
-            height: 80%;
-            object-fit: cover;
-        }
-
-        .story-head {
-            font-size: 25px;
-            font-weight: bolder;
-            font-family: 'Playfair Display';
-        }
-
-        .story-content {
-            font-family: 'Poppins', sans-serif;
-            font-size: 15px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.51;
-            letter-spacing: 0.6px;
-            text-align: left;
-            color: #000000;
-        }
-
-        .active {
-            font-weight: bolder;
-        }
-
-
-        /* columns */
-        .contents {
-            width: 80%;
-            display: flex;
-            padding: 50px;
-            flex-direction: column;
-        }
-
-        .paper {
-            display: flex;
-            flex-direction: row;
-        }
-
-        /* buttons */
-        .btncontainer {
-            width: 25%;
-            padding: 50px 0px;
-            padding-right: 100px;
-            padding-top: 100px;
-            /* background-color: black; */
-            /* justify-items: right; */
-        }
-
-        .btncontainer a {
-            color: black;
-            /* justify-items: right; */
-        }
-
-        .Ellipse-136 {
-            width: 20px;
-            height: 20px;
-            margin-top: 20%;
-            border-radius: 50%;
-            /* margin: 292px 104.9px 59.4px 6px; */
-            border: solid 2px #c9fd6a;
-        }
-
-        .Line-55 {
-            width: 1px;
-            height: 62px;
-            margin-left: 82%;
-            margin-top: -12%;
-            /* margin: 309.7px 114px 0 317px; */
-            transform: rotate(180deg);
-            background-color: #c9fd6a;
-        }
-
-        .Ellipse-137 {
-            width: 20px;
-            height: 20px;
-            margin-top: 20%;
-            border-radius: 50%;
-            /* margin: 59.7px 104.9px 53px 6px; */
-            border: solid 2px #c9fd6a;
-        }
-
-        .Line-54 {
-            width: 1px;
-            height: 62px;
-            margin-top: -13%;
-            margin-left: 82%;
-            transform: rotate(180deg);
-            background-color: #c9fd6a;
-        }
-
-        .Ellipse-138 {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-top: 15%;
-            margin-left: 5%;
-            /* margin: 22px 104.9px 338px 6px; */
-            border: solid 2px #c9fd6a;
-        }
-
-        .button {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .box {
-            padding: 50px 100px 70px 0px;
-            float: right;
-            margin-top: 30%;
-        }
-
-        .box a {
-            text-decoration: none;
-        }
-
-        #go-to-home-btn {
-            /* float: right; */
-            margin-top: 50%;
-            /* margin-right: 30%; */
-            width: 100%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #go-to-about-btn {
-            margin-top: -20.5%;
-            width: 100%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #go-to-footer-btn {
-            margin-top: -16.5%;
-            margin-left: -7%;
-            width: 100%;
-            font-size: 17px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        @media screen and (max-width: 500px) {
-            .topnav a:not(:last-child) {
-                display: none;
-            }
-
-            .topnav a.icon {
-                float: right;
-                display: block;
-            }
-
-            .topnav {
-                position: fixed;
-                /* flex-direction: column; */
-                transition: 2s;
-            }
-
-            .responsive {
-                position: fixed;
-                flex-direction: column;
-            }
-
-            .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-
-            .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: center;
-                /* transition: 20s; */
-            }
-
-            .content-container {
-                display: flex;
-                width: 100%;
-                flex-direction: column;
-                padding: 0px;
-            }
-
-            .btncontainer {
-                display: none;
-            }
-
-            .col-1 {
-                width: 60%;
-            }
-
-            .logo {
-                width: 100%;
-            }
-
-            .col-25 {
-                width: 100%;
-                margin-left: 0%;
-                padding-top: 18px;
-                text-align: center;
-            }
-
-            .dp-container {
-                width: 100%;
-                padding: 0px;
-            }
-
-            .dp {
-                padding: 0px;
-            }
-
-            #dp {
-                width: 340px;
-                height: 340px;
-                padding: 10px;
-            }
-
-            .about-container {
-                display: flex;
-                width: 100%;
-                padding: 0px;
-                flex-direction: column;
-            }
-
-            .paper {
-                width: 100%;
-            }
-
-            .contents {
-                width: 100%;
-                padding: 0px;
-            }
-
-            .image-box {
-                display: none;
-            }
-
-            .about-content {
-                width: 100%;
-                padding-left: 0px;
-            }
-
-            .footer {
-                width: 100%;
-                position: inherit;
-            }
-
-            .row-1 {
-                width: 95%;
-                padding-left: 10px;
-                flex-direction: column;
-                padding-right: 0px;
-            }
-
-            .footer-col-2 {
-                margin-left: 0%;
-            }
-
-            .footer-col-3 {
-                margin-left: 0%;
-            }
-
-            .row-2 {
-                flex-direction: column;
-            }
-
-            #cp-rights {
-                margin-left: 0% !important;
-            }
-
-            .content-3-1 {
-                width: 100%;
-                flex-direction: column;
-            }
-
-            .story-content {
-                font-size: 14px;
-                padding: 7px;
-            }
-
-            .content-1-1 {
-                width: 60%;
-            }
-
-            #name {
-                word-wrap: break-word;
-            }
-        }
-
-        @media screen and (min-width:501px) and (max-width: 1100px) {
-            .content-container {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .paper {
-                width: 100%;
-            }
-
-            .contents {
-                width: 100%;
-            }
-
-            .col-25 {
-                width: 100%;
-                text-align: center;
-                margin-left: 0%;
-            }
-
-            .dp-container {
-                width: 100%;
-                padding: 0px;
-                padding-top: 10px;
-            }
-
-            .dp {
-                padding: 0px;
-            }
-
-            .btncontainer {
-                display: none;
-            }
-
-            .image-box {
-                display: none;
-            }
-
-            .about-container {
-                display: flex;
-                padding: 10px;
-                padding-top: 0px;
-            }
-
-            .about-content {
-                width: 100%;
-            }
-
-            .footer {
-                position: inherit;
-            }
-
-            .row-1 {
-                padding-left: 50px;
-                padding-right: 50px;
-            }
-
-            .footer-col-2 {
-                width: 35%;
-            }
-
-            .footer-col-3 {
-                width: 30%;
-                margin-left: 0%;
-            }
-
-            .content-1-1 {
-                width: 60%;
-            }
-
-            #cp-rights {
-                margin-left: 2%;
-            }
-
-            .content-3-1 {
-                width: 60%;
-            }
-
-            .content-3-1 a {
-                padding-top: 15px;
-                font-size: 16px;
-                vertical-align: middle;
-            }
-
-            .col-1 {
-                width: 30%;
-            }
-
-            .logo {
-                width: 100%;
-            }
-
-            .col-2 {
-                width: 70%;
-            }
-
-            .topnav a {
-                font-size: 16px;
-                padding: 9px;
-            }
-
-            .btn {
-                font-size: 14.5px;
-                height: 30px;
-            }
-        }
-
-        @media screen and (min-width:1101px) and (max-width: 1250px) {
-            .footer-col-2 {
-                width: 40%;
-                margin-left: 5%;
-            }
-
-            .contents {
-                width: 80%;
-            }
-
-            .btncontainer {
-                width: 25% !important;
-                padding-right: 50px !important;
-            }
-
-            .footer-col-3 {
-                width: 40%;
-                margin-left: 5%;
-            }
-        }
-    </style>
 </head>
 
-<body>
-    <div class="topnav" id="myTopnav">
-        <div class="col-1">
-            <a href=#><img src="https://spotknack.com/mailimages/spotknacklogo.png" class="logo">
-            </a>
+<body id="home" onload="mentor()">
+    <!--======Navbar=======-->
+    <nav class="navbar bg-white fixed-top navbar-light navbar-expand-md bg-light">
+        <a href="https://community.spotknack.com/" class="navbar-brand"><img src="img/Black Logo.svg"
+                class="talent-logo" alt=""></a>
+        <button class=" nt navbar-toggler position-absolute " data-toggle="collapse" data-target="#navMenu">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ml-auto text-nowrap">
+                <li class="nav-item"><a class="nav-link text-dark font-weight-bold" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="about.html">About us</a></li>
+                <li class="nav-item"><a class="nav-link text-dark mr-2" href="#how-it-works">How it works</a></li>
+                <li class="nav-item"><a
+                        href='https://forms.zohopublic.com/spotknack/form/Mission2021Registration/formperma/6HLkFAHXn-sAPii62-6vLCNSmx8Ys47CrrpEVJzgLSQ'
+                        title="Student Registration" target='_blank'
+                        onclick="zforms_open_window(this.href, 648, 700); return false"><button
+                            class="st-btn btn btns mr-3">Students</button></li></a>
+                <li class="nav-item"><a
+                        href='https://forms.zohopublic.com/spotknack/form/Mission2021MentorRegistration/formperma/aSdE6VggBqJsV0xQcfHhKRxloqNlgjKVSPumT7So-FM'
+                        title="Mentor Registration" target='_blank'
+                        onclick="zforms_open_window(this.href, 648, 700); return false"><button
+                            class="em-btn btn btns  mr-3">Mentors</button></li></a>
+                <li class="nav-item"><a
+                        href='https://forms.zohopublic.com/spotknack/form/SpotknackMission2021StartupRegistration/formperma/PHR0aiProErwWIdWHDCOW76mwxkJVSY7ARW3FgE5N3M'
+                        title="Startup Registration" target='_blank'
+                        onclick="zforms_open_window(this.href, 648, 700); return false"><button
+                            class="em-btn btn btns ">Company</button></li></a>
+            </ul>
         </div>
-        <div class="col-2">
-            <a href=#><button href=# class="btn"> Employers</button></a>
-            <a href=#><button href=# class="btn"> Students</button></a>
-            <a href=#> How it works</a>
-            <a href=#> About Us</a>
-            <a href=#> Home</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </div>
-    <div class="paper">
-        <div class="contents">
-            <div class="content-container" id="Home">
-                <div class="col-25">
-                    <h3 style="font-size: 30px; color: #000000;">Hi there , i am </h3>
-                    <h1 id="name"> Harsha Varthan</h1>
-                    <h4 id="role"> Front End Developer</h4>
-                    <a href=# id="profile"><img src="https://spotknack.com/mailimages/maillinkedin.png"></a>
-                </div>
-                <div class="dp-container">
-                    <div class="dp">
-                        <img src="dp.jpg" id="dp">
-                    </div>
-                </div>
-            </div>
-            <div class="about-container" id="About-me">
-                <div class="image-box">
-                    <img src="dp.jpg" id="about-dp">
-                </div>
-                <div class="about-content">
-                    <div class="story-head">
-                        <h1>My Story</h1>
-                    </div>
-                    <div class="story-content">
-                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                            cupidatat
-                            irure. Laborum magna nulla duis ullamco cillum dolor.
-                        </p>
-                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                            cupidatat
-                            irure. Laborum magna nulla duis ullamco cillum dolor.
-                        </p>
-                        <p>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate
-                            exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit
-                            cupidatat
-                            irure. Laborum magna nulla duis ullamco cillum dolor.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="btncontainer" id="go-to-btns">
-            <div class="box">
-                <a href="#" id="go-to-home-btn" class="button active">
-                    <p>Home &nbsp;</p>
-                    <div class="Ellipse-136"></div>
-                </a>
-                <div class="Line-54"></div>
-                <a href="#" id="go-to-about-btn" class="button">
-                    <p>About &nbsp;</p>
-                    <div class="Ellipse-137"></div>
-                </a>
-                <!-- <div class="Line-55"></div>
+    </nav>
 
-                <a href="#" id="go-to-footer-btn" class="button">
-                    <p>Contact &nbsp;</p>
-                    <div class="Ellipse-138"></div>
-                </a> -->
-            </div>
-        </div>
+    <!-- chain welcome -->
+    <div class="container-1">
+        <h1 class="welcome-head">We dhodfu oahdoaf odifsdof sdfoishdfov vsoihvdsohv</h1>
+        <p class="welcome-content">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
+            officia consequat duis
+            enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
     </div>
-    <div class="footer" id="Footer">
-        <div class="row-1">
-            <div class="footer-col-1">
-                <img src="https://spotknack.com/mailimages/spotknacklogo.png" class="footer-logo">
-                <div class="content-1">
-                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Address</h4>
-                    <h5 style="font-weight: 400;">Coimbatore-641 035</h5><br>
+
+    <!-- Team section -->
+    <section class="section-container">
+        <div class="inner-box">
+            <div class="section-container-head">
+                <h2 id="head-name">Student Team</h2>
+                <p id="head-content">Click on Impacter to grow their impact chain</p>
+            </div>
+            <div class="impact-box">
+                <div class="impact-box-block" id="removeevent" onclick="growtree();removeEvent();">
+                    <div class="impact-dp-box">
+                    </div>
+                    <div class="impact-user-content">
+                        <h5 id="member-count"> Team Member One</h5>
+                        <p id="clg-name"> Coimbatore Institute of Technology</p>
+                    </div>
                 </div>
-                <div class="content-1">
-                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Support</h4>
-                    <a href=#>
-                        <h5 style="font-weight: 400;">support@spotknack.com</h5><br>
-                    </a>
+                <div class="impact-box-block">
+                    <div class="impact-dp-box">
+                    </div>
+                    <div class="impact-user-content">
+                        <h5 id="member-count"> Team Member One</h5>
+                        <p id="clg-name"> Coimbatore Institute of Technology</p>
+                    </div>
                 </div>
-                <div class="content-1">
-                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Follow Us On</h4>
-                    <div class="content-1-1">
-                        <a href=#><i class="fab fa-facebook"></i></a>
-                        <a href=#><i class="fab fa-linkedin"></i></a>
-                        <a href=#><i class="fab fa-instagram"></i></a>
-                        <a href=#><i class="fab fa-twitter"></i></a>
+                <div class="impact-box-block">
+                    <div class="impact-dp-box">
+                    </div>
+                    <div class="impact-user-content">
+                        <h5 id="member-count"> Team Member One</h5>
+                        <p id="clg-name"> Coimbatore Institute of Technology</p>
+                    </div>
+                </div>
+                <div class="impact-box-block">
+                    <div class="impact-dp-box">
+                    </div>
+                    <div class="impact-user-content">
+                        <h5 id="member-count"> Team Member One</h5>
+                        <p id="clg-name"> Coimbatore Institute of Technology</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-col-2">
-                <div class="content-2-1">
-                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Organization</h4>
-                    <a href=#>
-                        <h5 style="font-weight: 400;">About</h5>
-                    </a>
-                    <a href=#>
-                        <h5 style="font-weight: 400;">Time Line</h5>
-                    </a>
-                    <a href=#>
-                        <h5 style="font-weight: 400;">Members </h5>
-                    </a>
-                    <a href=#>
-                        <h5 style="font-weight: 400;">Become a member</h5>
-                    </a><br>
-                </div>
-            </div>
-            <div class="footer-col-3">
-                <div class="content-2-1">
-                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Resources</h4>
-                    <a href=#>
-                        <h5 style="font-weight: 400;">Impact Stories</h5>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-col-3">
-                <div class="content-2-1">
-                    <h4 style="font-size: 12px; opacity: 0.7;font-weight: 400;">Partners</h4>
-                    <a href=#>
-                        <h5 style="font-weight: 400;">Startup Culture</h5>
-                    </a>
-                </div>
-            </div>
         </div>
-        <div class="row-2">
-            <h5 style="margin-left: 6%;" id="cp-rights">Build With <img class="heart"
-                    src="https://spotknack.com/mailimages/mailheart.png"> By Spotknack Talent
-                Community</h5>
-            <div class="content-3-1">
-                <a href=#>
-                    <h5 style="font-weight: 400;">Privacy Policy</h5>
-                </a>
-                <a href=#>
-                    <h5 style="font-weight: 400;">Terms and Conditions</h5>
-                </a>
-                <a href=#>
-                    <h5 style="font-weight: 400;">Code of Conduct</h5>
-                </a>
+    </section>
+
+    <!-- Impact chain -->
+    <section class="impact-chain-box" id="impactChain">
+        <h2>Student Team</h2>
+        <!-- <div class="chain-odd-box" id="oddbox">
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
             </div>
-        </div>
-    </div>
+            <hr />
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
+            </div>
+            <hr />
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
+            </div>
+            <hr />
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
+            </div>
+        </div> -->
+        <!-- <div class="chain-even-box" id="evenbox">
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
+            </div>
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
+            </div>
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
+            </div>
+            <div class="img-block">
+                <img src="img/talent green.png" class="student-profile-pic">
+            </div>
+        </div> -->
+    </section>
+
+    <!-- script -->
 
     <script>
-        var header = document.getElementById("go-to-btns");
-        var btns = header.getElementsByClassName("button");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
+        function growtree() {
+            document.getElementById("impactChain").style.display = "block";
+            fetch('https://testawsapi2.spotknack.com/api/growimpactchain?mentor_id=6378')
+                .then((response) => response.json())
+                .then((data) => {
+                    // console.log(response)
+                    // console.log(.length)
+                    len = data.length;
+                    var roundLength = Math.round(len / 4);
+                    // var iterator = 0;
+                    var boxcount = Math.round(len / 3);
+                    var impactbox = document.getElementById("impactChain");
+                    var innercounter = 0;
+                    // console.log(" data " + data[9] + " length " + data.length)
+                    for (var i = 0; i < roundLength; i++) {
+                        // console.log(i)
+                        var chainbox = document.createElement('div');
+                        chainbox.className = "chain-odd-box";
+                        chainbox.id = "oddbox" + i;
+                        impactbox.appendChild(chainbox);
+                        for (j = 0; j <= parseInt(len / 3); j++) {
+                            // console.log("first " + data[innercounter].pic_url)
+                            var boxclass = document.getElementById("oddbox" + i);
+                            // console.log(boxclass);
+                            var img = document.createElement('img');
+                            img.className = "student-profile-pic";
+                            img.src = data[innercounter].pic_url;
+                            img.id = "number" + innercounter;
+                            boxclass.appendChild(img);
+                            var line = document.createElement('hr');
+                            line.className = "hrline"
+                            // line.id = "hrlines" + innercounter;
+                            boxclass.appendChild(line);
+                            console.log(innercounter)
+                            innercounter++
+                            if (innercounter >= len)
+                                j = 5;
+                            // console.log(innercounter)
+                        }
+                    }
+                    var hr = document.getElementsByTagName('hr');
+                    var hrlength = hr.length;
+                    for (var i = 0; i < hrlength; i++) {
+                        if (((i % 4) == 0) && (i != 0)) {
+                            hr[i - 1].style.display = "none";
+                        }
+                        console.log(" i " + i);
+                    }
+                })
+                .catch((err) => { console.log(err) })
+            // console.log(document.getElementsByClassName('hrline'))
         }
     </script>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-    </script>
-    <script>
-        document.getElementById("go-to-home-btn").addEventListener("click", function () {
-            document.getElementsByClassName("content-container")[0].style.display = "flex";
-            document.getElementsByClassName("about-container")[0].style.display = "none";
-        });
-        document.getElementById("go-to-about-btn").addEventListener("click", function () {
-            document.getElementsByClassName("content-container")[0].style.display = "none";
-            document.getElementsByClassName("about-container")[0].style.display = "flex";
-        })
-    </script>
 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        type = "text/javascript" > function zforms_open_window(url, height, width) { var leftPos = 0; var topPos = 0; if (screen) { leftPos = (screen.width - width) / 2; topPos = (screen.height - height) / 2; window.open(url, null, 'width=' + width + ',height=' + height + ',left=' + leftPos + ',top=' + topPos + ', toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); } }</script>
+    <script type="text/javascript"
+        id="zsiqchat">var $zoho = $zoho || {}; $zoho.salesiq = $zoho.salesiq || { widgetcode: "68d14420a8b23c3d7966c8637be17415ee75cdd5a02af41d55e343270b69fc44", values: {}, ready: function () { } }; var d = document; s = d.createElement("script"); s.type = "text/javascript"; s.id = "zsiqscript"; s.defer = true; s.src = "https://salesiq.zoho.com/widget"; t = d.getElementsByTagName("script")[0]; t.parentNode.insertBefore(s, t);</script>
 </body>
 
 </html>
