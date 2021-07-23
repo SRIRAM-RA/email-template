@@ -56,6 +56,7 @@
                         var boxblock = document.createElement('div');
                         boxblock.className = "impact-box-block";
                         // boxblock.onclick = growtree();
+                        boxblock.setAttribute("href", "impactChain");
                         boxblock.id = data[i].mentor_id;
                         boxblock.setAttribute("onclick", "growtree();");
                         console.log(boxblock)
@@ -205,22 +206,25 @@
                                 j = 5;
                             // console.log(innercounter)
                         }
-                        var curvedLine = document.createElement('svg');
-                        if ((i % 2 != 0) && (i != 0)) {
+                        var curvedLine = document.createElement('div');
+                        if (i == (roundLength - 1)) {
+                            break;
+                        }
+                        else if ((i % 2 != 0) && (i != 0)) {
                             curvedLine.className = "curved-line-left";
                         }
                         else {
                             curvedLine.className = "curved-line-right";
                         }
                         impactbox.appendChild(curvedLine);
-                        var curvedPath = document.createElement('path');
-                        curvedPath.setAttribute("d", "M 30 110 C 70 190, 210 370, 370 110");
-                        curvedLine.appendChild(curvedPath);
                     }
                     var hr = document.getElementsByTagName('hr');
                     var hrlength = hr.length;
                     for (var i = 0; i < hrlength; i++) {
-                        if (((i % 4) == 0) && (i != 0)) {
+                        if (i == (hrlength - 1)) {
+                            hr[i].style.display = "none";
+                        }
+                        else if (((i % 4) == 0) && (i != 0)) {
                             hr[i - 1].style.display = "none";
                         }
                         console.log(" i " + i);

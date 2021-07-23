@@ -139,6 +139,7 @@ h2{
     padding-left: 100px;
     display: flex;
     flex-direction: row;
+    /* z-index: 1.5; */
     /* justify-content: center; */
     align-self: flex-start;
     /* flex-wrap: wrap; */
@@ -167,6 +168,7 @@ h2{
   } */
   hr {
     width: 10%;
+    /* border-radius: 30px; */
     display: block;
     height: 2px;
     border: 0;
@@ -179,32 +181,70 @@ h2{
     padding: 35px;
     padding-right: 100px;
     display: flex;
-    /* flex-direction: row; */
     justify-content: center;
     align-self: flex-end;
-    /* flex-wrap: wrap; */
-    /* overflow: hidden; */
+    /* z-index: 2; */
 }
 
+.curved-line-right {
+    margin-left: 70.1%;
+    margin-top: -1%;
+    width: 470px; 
+    height: 105px;  
+    border: solid 5px #74d30b;
+    border-color: #74d30b transparent transparent transparent ;
+    border-radius: 50%/100px 110px 0 0;
+    transform: rotate(90deg);
+    z-index: 0 ;
+}
 .curved-line-left{
-    margin-left: -70%;
-    transform: rotate(180deg);
-    height:"300"; width:"800"; 
-    fill:none; 
-    stroke:black; 
-    stroke-width:3; 
-}
-.curved-line-right
-{
-    height: 300px;
-    width: 800px;
-    margin-left:65%;
-    margin-top: -25%;
+    margin-left: -9%;
+    margin-top: -1%;
+    width: 470px; 
+    height: 105px;  
+    border: solid 5px #74d30b;
+    border-color: #74d30b transparent transparent transparent ;
+    border-radius: 50%/100px 110px 0 0;
     transform: rotate(270deg);
-    fill:none; 
-    stroke:black; 
-    stroke-width:3; 
+    z-index: 0 ;   
 }
+
+/* tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+}
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+    
+
 
 
 @media screen and (max-width: 600px)
@@ -328,6 +368,12 @@ h2{
     hr{
         margin: 2em 0;
     }
+    .curved-line-left{
+        display: none;
+    }
+    .curved-line-right{
+        display: none;
+    }
 }
 
 @media screen and (min-width:800px) and (max-width: 900px)
@@ -364,7 +410,14 @@ h2{
     hr{
         margin: 2em 0;
     }
+    .curved-line-left{
+        display: none;
+    }
+    .curved-line-right{
+        display: none;
+    }
 }
+
 
 @media screen and (min-width:900px) and (max-width:1200px)
 {
@@ -392,7 +445,23 @@ h2{
         padding-left: 0px;
     }
 }
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+    .curved-line-left{
+        display: none;
+    }
+    .curved-line-right{
+        display: none;
+    }
+}
 
+@media screen and (min-width: 1000px) and (max-width: 1040px){
+    .curved-line-left{
+        margin-left: -20%;
+    }
+    .curved-line-right{
+        margin-left: 67%;
+    }
+}
 @media screen and (min-width: 1200px) and (max-width: 1444px)
 {
     .chain-odd-box{
