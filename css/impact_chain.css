@@ -1,5 +1,6 @@
 .container-1{
     padding: 40px;
+    padding-top: 100px;
     text-align: center;
 }
 
@@ -81,6 +82,7 @@
     width: 30%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .impact-dp{
     border-radius: 10px;
@@ -88,9 +90,9 @@
     height: 170px;  
     object-fit: cover;
 }
-.impact-dp-box{
+/* .impact-dp-box{
     cursor: pointer;
-}
+} */
 .impact-user-content{
     padding: 3px;
     font-family: Poppins;
@@ -104,11 +106,17 @@
 #member-count{
     font-size: 14px;
     font-weight: 700;
+    padding-top: 7px;
+    margin-top: -2%;
 }
 
-#clg-name{
+.impact-user-content h5:hover{
+    color: gold;
+}
+#cmp-name{
     font-size: 12px;
     opacity: 0.7;
+    margin-top: -10%;
 }
 
 .impact-chain-box{
@@ -128,11 +136,12 @@ h2{
 }
 .chain-odd-box{
     padding: 35px;
+    padding-left: 100px;
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
     align-self: flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* overflow: hidden; */
 }
 .img-block{
@@ -166,11 +175,230 @@ h2{
     padding: 0;
 }
 .chain-even-box{
+    flex-direction: row-reverse !important;
     padding: 35px;
+    padding-right: 100px;
     display: flex;
-    flex-direction: row-reverse;
-    /* justify-content: center; */
-    align-self: flex-start;
-    flex-wrap: wrap;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-self: flex-end;
+    /* flex-wrap: wrap; */
     /* overflow: hidden; */
+}
+
+.curved-line-left{
+    margin-left: -70%;
+    transform: rotate(180deg);
+    height:"300"; width:"800"; 
+    fill:none; 
+    stroke:black; 
+    stroke-width:3; 
+}
+.curved-line-right
+{
+    height: 300px;
+    width: 800px;
+    margin-left:65%;
+    margin-top: -25%;
+    transform: rotate(270deg);
+    fill:none; 
+    stroke:black; 
+    stroke-width:3; 
+}
+
+
+@media screen and (max-width: 600px)
+{
+    .container-1{
+        padding: 7px;
+        padding-top: 70px;
+    }
+    .welcome-head{
+        font-size: 55px;
+    }
+    .welcome-content{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .section-container{
+        padding: 10px;
+    }
+    .section-container-head{
+        width: 100%;
+        text-align: center !important;
+        padding: 0px;
+    }
+    .inner-box{
+        width: 100%;
+        margin-left: 0px;
+        padding: 0px;
+        flex-direction: column;
+    }
+    #head-content{
+        font-size: 15px;
+    }
+    .impact-box{
+        width: 100%;
+        padding:0px;
+    }
+    .impact-box-block{
+        width: 50%;
+    }
+    /* .impact-dp{
+        margin-left: 5%;
+    } */
+    .impact-user-content{
+        text-align: center !important;
+    }
+    .impact-chain-box{
+        padding: 20px;
+    }
+    .chain-even-box{
+        padding: 65px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        flex-direction: column !important;
+    }
+    .chain-odd-box{
+        padding: 65px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        flex-direction: column;
+    }
+    hr{
+        display: none;
+    }
+    .student-profile-pic{
+        margin-top: 17%;
+    }
+    .curved-line-left{
+        display: none;
+    }
+    .curved-line-right{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 600px){
+    .chain-even-box{
+        padding: 97px !important;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        flex-direction: column !important;
+    }
+    .chain-odd-box{
+        padding: 97px !important;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width: 800px)
+{
+    .welcome-content{
+        width: 100%;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .inner-box{
+        width: 100%;
+        margin-left: 0px;
+        padding: 0px;
+    }
+    .impact-chain-box{
+        padding: 20px;
+    }
+    .impact-box-block{
+        width: 40%;
+    }
+    #member-count{
+        margin-top: 0%;
+    }
+    .chain-even-box{
+        padding: 0px;
+    }
+    .chain-odd-box{
+        padding: 0px;
+    }
+    .student-profile-pic{
+        width: 128px;
+        height: 128px;
+    }
+    hr{
+        margin: 2em 0;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width: 900px)
+{
+    .welcome-content{
+        width: 100%;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .inner-box{
+        width: 90%;
+        margin-left: 33px;
+        padding: 0px;
+    }
+    .impact-chain-box{
+        padding: 20px;
+    }
+    .impact-box-block{
+        width: 40%;
+    }
+    #member-count{
+        margin-top: 0%;
+    }
+    .chain-even-box{
+        padding: 0px;
+    }
+    .chain-odd-box{
+        padding: 0px;
+    }
+    .student-profile-pic{
+        width: 145px;
+        height: 145px;
+    }
+    hr{
+        margin: 2em 0;
+    }
+}
+
+@media screen and (min-width:900px) and (max-width:1200px)
+{
+    .welcome-content{
+        width: 100%;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .inner-box{
+        width: 75%;
+        margin-left: 8.5%;
+    }
+    .impact-box-block{
+        width: 33%;
+    }
+    .impact-dp{
+        width: 150px;
+        height: 150px;
+    }
+    .chain-even-box{
+        padding-left: 3px;
+        padding-right: 35px;
+    }
+    .chain-odd-box{
+        padding-left: 0px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1444px)
+{
+    .chain-odd-box{
+        padding-left: 88px;
+    }
+    .chain-even-box{
+        padding-right: 17px;
+    }
 }
