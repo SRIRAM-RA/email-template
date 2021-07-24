@@ -90,9 +90,7 @@
     height: 170px;  
     object-fit: cover;
 }
-/* .impact-dp-box{
-    cursor: pointer;
-} */
+
 .impact-user-content{
     padding: 3px;
     font-family: Poppins;
@@ -110,8 +108,15 @@
     margin-top: -2%;
 }
 
+#student-name-tip{
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 7px;
+    margin: 0;
+}
+
 .impact-user-content h5:hover{
-    color: gold;
+    color: rgb(214, 185, 22);
 }
 #cmp-name{
     font-size: 12px;
@@ -122,7 +127,6 @@
 .impact-chain-box{
     display: none;
     padding: 45px;
-    /* background-color: bisque; */
     text-align: center;
     font-size: 40px;
     font-stretch: normal;
@@ -136,44 +140,36 @@ h2{
 }
 .chain-odd-box{
     padding: 35px;
-    padding-left: 100px;
+    padding-left: 110px;
     display: flex;
     flex-direction: row;
-    /* z-index: 1.5; */
-    /* justify-content: center; */
     align-self: flex-start;
-    /* flex-wrap: wrap; */
-    /* overflow: hidden; */
 }
 .img-block{
     width: 25%;
     padding: 15px;
     border-radius: 50%;
-    /* background-color: blue; */
     justify-content: space-evenly;
 }
 .student-profile-pic{
-    width: 190px;
-    height: 190px;
+    width: 195px;
+    height: 195px;
     margin-top: 2%;
     border-radius: 50%;
     object-fit: cover;
+    z-index: 1;
 }
-/* .Line-1 {
-    width: 2px;
-    height: 1px;
-    margin: 5.7px 78.6px 17.3px 188.6px;
-    transform: rotate(2deg);
-    border: solid 2px #74d30b;
-  } */
-  hr {
+.student-profile-pic:hover{
+    border: 5px solid #74d30b ; 
+    transition: 0.025s; 
+}
+hr {
     width: 10%;
-    /* border-radius: 30px; */
     display: block;
     height: 2px;
     border: 0;
     border-top: 4px solid #74d30b;
-    margin: 3em 0;
+    margin: 2.5em 0;
     padding: 0;
 }
 .chain-even-box{
@@ -195,10 +191,10 @@ h2{
     border-color: #74d30b transparent transparent transparent ;
     border-radius: 50%/100px 110px 0 0;
     transform: rotate(90deg);
-    z-index: 0 ;
+    z-index: -999 ;
 }
 .curved-line-left{
-    margin-left: -9%;
+    margin-left: -8%;
     margin-top: -1%;
     width: 470px; 
     height: 105px;  
@@ -206,45 +202,65 @@ h2{
     border-color: #74d30b transparent transparent transparent ;
     border-radius: 50%/100px 110px 0 0;
     transform: rotate(270deg);
-    z-index: 0 ;   
+    z-index: -999 ;   
 }
 
 /* tooltip */
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    z-index: 1;
+    /* border-bottom: 1px dotted black; */
 }
   
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
+    width: 160px;
+    height: 55px;
+    background-color: #fff;
+    /* color: black; */
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
     position: absolute;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: left;
+    color: #000000;
     z-index: 1;
-    top: -5px;
-    left: 110%;
+    bottom: 102%;
+    left: 0%;
+    padding: 0px 2px 1px 2px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border: solid 3px #74d30b;
+    z-index: 20;
 }
   
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    top: 50%;
-    right: 100%;
+    top: 100%;
+    left: 50%;
     margin-top: -5px;
-    border-width: 5px;
+    border-width: 8px;
     border-style: solid;
-    border-color: transparent black transparent transparent;
+    z-index: 20;
+    border-color: transparent #74d30b transparent transparent;
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
-    
-
+/* i{
+    margin: 5px 185px 0 3px;
+} */
+/*     
+#linkedin{
+    margin-top: -20%;
+} */
 
 
 @media screen and (max-width: 600px)
@@ -266,7 +282,7 @@ h2{
     .section-container-head{
         width: 100%;
         text-align: center !important;
-        padding: 0px;
+        padding: 7px;
     }
     .inner-box{
         width: 100%;
@@ -276,6 +292,7 @@ h2{
     }
     #head-content{
         font-size: 15px;
+        margin-top: -5%;
     }
     .impact-box{
         width: 100%;
@@ -284,9 +301,13 @@ h2{
     .impact-box-block{
         width: 50%;
     }
-    /* .impact-dp{
-        margin-left: 5%;
-    } */
+    .impact-dp-box{
+        padding: 10px;
+    }
+    .impact-dp{
+        width: 155px;
+        height: 155px;
+    }
     .impact-user-content{
         text-align: center !important;
     }
@@ -315,6 +336,9 @@ h2{
         display: none;
     }
     .curved-line-right{
+        display: none;
+    }
+    .tooltiptext{
         display: none;
     }
 }
@@ -369,9 +393,17 @@ h2{
         margin: 2em 0;
     }
     .curved-line-left{
-        display: none;
+        margin-left: -23%;
+        width: 485px;
+        height: 144px;
+        /* display: none; */
     }
     .curved-line-right{
+        margin-left: 59%;
+        width: 463px;
+        height: 114px;
+    }
+    .tooltiptext{
         display: none;
     }
 }

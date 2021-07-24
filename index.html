@@ -12,7 +12,6 @@
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <!-- <meta name="language" content="English"> -->
     <meta name="revisit-after" content="7 days">
     <meta name="author" content="spotknack">
     <title> Impact chain </title>
@@ -26,7 +25,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+    </style>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144587839-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -39,26 +46,23 @@
     <script>
         function mentor() {
             console.log("funciton called");
-            // var img_id = document.getElementById("mentor")
             fetch('https://testawsapi2.spotknack.com/api/impactmentorslist')
                 .then(function (response) {
-                    // console.log(response)
                     return response.json()
                 })
                 .then((data) => {
                     var classs = document.getElementById("impactBox");
-                    // var class_length = classs.length;
-                    // console.log(classs);
                     len = data.length;
                     console.log("length of mentor" + len)
                     for (var i = 0; i < len; i++) {
+
                         // outer box creation
                         var boxblock = document.createElement('div');
                         boxblock.className = "impact-box-block";
                         // boxblock.onclick = growtree();
                         boxblock.setAttribute("href", "impactChain");
                         boxblock.id = data[i].mentor_id;
-                        boxblock.setAttribute("onclick", "growtree();");
+                        boxblock.setAttribute("onclick", "growtree(); scroll()");
                         console.log(boxblock)
                         classs.appendChild(boxblock);
 
@@ -157,7 +161,6 @@
     </section>
 
     <!-- script -->
-
     <script>
         function growtree() {
             var mentor_id = event.currentTarget.id;
@@ -167,17 +170,13 @@
             fetch(`https://testawsapi2.spotknack.com/api/growimpactchain?mentor_id=${mentor_id}`)
                 .then((response) => response.json())
                 .then((data) => {
-                    // console.log(response)
-                    // console.log(.length)
+
                     len = data.length;
                     var roundLength = Math.round(len / 4);
-                    // var iterator = 0;
                     var boxcount = Math.round(len / 3);
                     var impactbox = document.getElementById("impactChain");
                     var innercounter = 0;
-                    // console.log(" data " + data[9] + " length " + data.length)
                     for (var i = 0; i < roundLength; i++) {
-                        // console.log(i)
                         var chainbox = document.createElement('div');
                         if ((i % 2 != 0) && (i != 0)) {
                             chainbox.className = "chain-even-box";
@@ -188,23 +187,36 @@
                         chainbox.id = "oddbox" + i;
                         impactbox.appendChild(chainbox);
                         for (j = 0; j <= parseInt(len / 3); j++) {
-                            // console.log("first " + data[innercounter].pic_url)
                             var boxclass = document.getElementById("oddbox" + i);
-                            // console.log(boxclass);
+                            var outerdiv = document.createElement('div');
+                            outerdiv.className = "tooltip";
+                            boxclass.appendChild(outerdiv);
                             var img = document.createElement('img');
                             img.className = "student-profile-pic";
                             img.src = data[innercounter].pic_url;
                             img.id = "number" + innercounter;
-                            boxclass.appendChild(img);
+                            outerdiv.appendChild(img);
+                            var spanclass = document.createElement('span');
+                            spanclass.className = "tooltiptext";
+                            var student_name = document.createElement('h5');
+                            student_name.id = "student-name-tip"
+                            student_name.innerHTML = data[innercounter].student_name
+                            var student_name1 = document.createElement('a');
+                            student_name1.setAttribute("href", data[innercounter].linkedin);
+                            spanclass.appendChild(student_name);
+                            spanclass.appendChild(student_name1);
+                            var linkedin_ico = document.createElement('i');
+                            linkedin_ico.className = "fab fa-linkedin"
+                            linkedin_ico.id = "linkedin"
+                            student_name1.appendChild(linkedin_ico);
+                            outerdiv.appendChild(spanclass);
                             var line = document.createElement('hr');
                             line.className = "hrline"
-                            // line.id = "hrlines" + innercounter;
                             boxclass.appendChild(line);
                             console.log(innercounter)
                             innercounter++
                             if (innercounter >= len)
                                 j = 5;
-                            // console.log(innercounter)
                         }
                         var curvedLine = document.createElement('div');
                         if (i == (roundLength - 1)) {
@@ -230,8 +242,10 @@
                         console.log(" i " + i);
                     }
                 })
+                .then(
+                    document.getElementById("impactChain").scrollIntoView({ behavior: "smooth" })
+                )
                 .catch((err) => { console.log(err) })
-            // console.log(document.getElementsByClassName('hrline'))
             document.getElementById(mentor_id).removeAttribute("onclick");
         }
     </script>

@@ -12,6 +12,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     vertical-align: middle;
+    z-index: 999;
 }
 
 .topnav a {
