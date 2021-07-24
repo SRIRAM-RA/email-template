@@ -46,7 +46,7 @@
     <script>
         function mentor() {
             console.log("funciton called");
-            fetch('https://testawsapi2.spotknack.com/api/impactmentorslist')
+            fetch('https://menteeapi.spotknack.com/api/impactmentorslist')
                 .then(function (response) {
                     return response.json()
                 })
@@ -121,61 +121,31 @@
                 <p id="head-content">Click on Impacter to grow their impact chain</p>
             </div>
             <div class="impact-box" id="impactBox">
-                <!-- <div class="impact-box-block" id="removeevent" onclick="growtree();removeEvent();">
-                    <div class="impact-dp-box">
-                    </div>
-                    <div class="impact-user-content">
-                        <h5 id="member-count"> Team Member One</h5>
-                        <p id="cmp-name"> Coimbatore Institute of Technology</p>
-                    </div>
-                </div>
-                <div class="impact-box-block" id="removeevent" onclick="growtree();removeEvent();">
-                    <div class="impact-dp-box">
-                    </div>
-                    <div class="impact-user-content">
-                        <h5 id="member-count"> Team Member One</h5>
-                        <p id="cmp-name"> Coimbatore Institute of Technology</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
 
     <!-- Impact chain -->
-    <section class="impact-chain-box" id="impactChain">
+    <section class="impact-chain-box" id="impactChain" action="javascript:document.location.reload()">
         <h2>Student Team</h2>
-        <!-- <div class="chain-odd-box" id="oddbox">
-            <div class="img-block">
-                <img src="img/talent green.png" class="student-profile-pic">
-            </div>
-            <hr />
-        </div>
-        <svg height="300" ; width="800" ; class="curved-line-right">
-            <path d="M 30 110 C 70 190, 210 370, 370 110" />
-        </svg>
-        <div class=" chain-even-box" id="evenbox">
-            <div class="img-block">
-                <img src="img/talent green.png" class="student-profile-pic">
-            </div>
-        </div> -->
     </section>
 
     <!-- script -->
     <script>
         function growtree() {
             var mentor_id = event.currentTarget.id;
-            console.log("before removing")
-            console.log("mentorID" + mentor_id);
             document.getElementById("impactChain").style.display = "block";
-            fetch(`https://testawsapi2.spotknack.com/api/growimpactchain?mentor_id=${mentor_id}`)
+            fetch(`https://menteeapi.spotknack.com/api/growimpactchain?mentor_id=${mentor_id}`)
                 .then((response) => response.json())
                 .then((data) => {
-
                     len = data.length;
                     var roundLength = Math.round(len / 4);
                     var boxcount = Math.round(len / 3);
-                    var impactbox = document.getElementById("impactChain");
                     var innercounter = 0;
+                    var impactbox = document.getElementById("impactChain");
+                    var impactHead = document.createElement('h2');
+                    impactHead.innerHTML = "Student Team";
+                    impactbox.appendChild(impactHead);
                     for (var i = 0; i < roundLength; i++) {
                         var chainbox = document.createElement('div');
                         if ((i % 2 != 0) && (i != 0)) {
@@ -213,7 +183,6 @@
                             var line = document.createElement('hr');
                             line.className = "hrline"
                             boxclass.appendChild(line);
-                            console.log(innercounter)
                             innercounter++
                             if (innercounter >= len)
                                 j = 5;
@@ -239,14 +208,17 @@
                         else if (((i % 4) == 0) && (i != 0)) {
                             hr[i - 1].style.display = "none";
                         }
-                        console.log(" i " + i);
                     }
                 })
                 .then(
                     document.getElementById("impactChain").scrollIntoView({ behavior: "smooth" })
                 )
                 .catch((err) => { console.log(err) })
-            document.getElementById(mentor_id).removeAttribute("onclick");
+            // document.getElementById(mentor_id).removeAttribute("onclick");
+            var childnodes = document.getElementById("impactChain");
+            while (childnodes.hasChildNodes()) {
+                childnodes.removeChild(childnodes.firstChild);
+            }
         }
     </script>
 
