@@ -73,7 +73,12 @@
 
                         // adding img
                         var img = document.createElement('img');
-                        img.src = data[i].pic_url;
+                        if (data[i].pic_url == null) {
+                            img.src = "img/Avatar2.png";
+                        }
+                        else {
+                            img.src = data[i].pic_url;
+                        }
                         img.className = "impact-dp";
                         dpbox.appendChild(img);
 
@@ -139,14 +144,17 @@
                 .then((response) => response.json())
                 .then((data) => {
                     len = data.length;
-                    var roundLength = Math.round(len / 4);
-                    var boxcount = Math.round(len / 3);
+                    console.log("length of data" + len + "parse " + Math.round(len / 3))
+                    var roundLength = Math.round(len / 3);
+                    console.log(roundLength)
                     var innercounter = 0;
+                    var columnCount = 4;
                     var impactbox = document.getElementById("impactChain");
                     var impactHead = document.createElement('h2');
                     impactHead.innerHTML = "Student Team";
                     impactbox.appendChild(impactHead);
                     for (var i = 0; i < roundLength; i++) {
+                        console.log(i)
                         var chainbox = document.createElement('div');
                         if ((i % 2 != 0) && (i != 0)) {
                             chainbox.className = "chain-even-box";
@@ -156,14 +164,21 @@
                         }
                         chainbox.id = "oddbox" + i;
                         impactbox.appendChild(chainbox);
-                        for (j = 0; j <= parseInt(len / 3); j++) {
+                        for (j = 0; j < columnCount; j++) {
                             var boxclass = document.getElementById("oddbox" + i);
                             var outerdiv = document.createElement('div');
                             outerdiv.className = "tooltip";
                             boxclass.appendChild(outerdiv);
                             var img = document.createElement('img');
                             img.className = "student-profile-pic";
-                            img.src = data[innercounter].pic_url;
+                            if (data[innercounter].pic_url == null) {
+                                img.src = "img/Avatar1.png";
+                                img.style.border = "1px solid black";
+                                img.style.background = "white";
+                            }
+                            else {
+                                img.src = data[innercounter].pic_url;
+                            }
                             img.id = "number" + innercounter;
                             outerdiv.appendChild(img);
                             var spanclass = document.createElement('span');
@@ -180,9 +195,13 @@
                             linkedin_ico.id = "linkedin"
                             student_name1.appendChild(linkedin_ico);
                             outerdiv.appendChild(spanclass);
-                            var line = document.createElement('hr');
-                            line.className = "hrline"
-                            boxclass.appendChild(line);
+                            if (j != (columnCount - 1)) {
+                                var line = document.createElement('hr');
+                                line.className = "hrline"
+                                boxclass.appendChild(line);
+                            }
+                            // console.log(innercounter)
+                            console.log("added one person" + innercounter)
                             innercounter++
                             if (innercounter >= len)
                                 j = 5;
@@ -201,12 +220,15 @@
                     }
                     var hr = document.getElementsByTagName('hr');
                     var hrlength = hr.length;
+                    console.log(hrlength)
                     for (var i = 0; i < hrlength; i++) {
                         if (i == (hrlength - 1)) {
+                            // hr[i - 1].style.display = "none";
+                            console.log("b" + i)
                             hr[i].style.display = "none";
                         }
-                        else if (((i % 4) == 0) && (i != 0)) {
-                            hr[i - 1].style.display = "none";
+                        else {
+                            continue
                         }
                     }
                 })
