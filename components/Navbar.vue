@@ -30,13 +30,16 @@ export default {
 .topnav {
     width: 100%;
     overflow: none;
-    position: fixed;
+    /* position: fixed; */
     display: flex;
     background-color: #ffffff;
     flex-direction: row;
     justify-content: space-between;
     vertical-align: middle;
     z-index: 999;
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .topnav a {
